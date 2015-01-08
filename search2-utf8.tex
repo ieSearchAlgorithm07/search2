@@ -6,6 +6,24 @@
 \usepackage[dvipdfmx]{graphicx}
 \usepackage{eclbkbox} %breakbox用
 
+\usepackage{listing,jlisting}
+%listingsの設定
+\renewcommand{\lstlistingname}{ソースコード}
+\lstset{language=sh,
+  breaklines = true 
+  basicstyle=\ttfamily\scriptsize,
+  commentstyle=\textit,
+  classoffset=1,
+  showstringspaces=false
+  keywordstyle=\bfseries,
+  frame=tRBl,
+  framesep=5pt,
+  showstringspaces=false,
+  numbers=left,
+  stepnumber=1,
+  numberstyle=\tiny,
+  tabsize=2
+}
 %本文領域を広め（空白箇所マージン領域を小さめ）に設定
 \setlength{\textwidth}{179mm}
 \setlength{\textheight}{251mm}
