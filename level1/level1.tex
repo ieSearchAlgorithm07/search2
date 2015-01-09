@@ -1,22 +1,22 @@
-\subsection{OR$BLdBj$r3X=,$5$;$?:]$N8m:9<}B+EY9g$$$K$D$$$F(B}
-\subsubsection{$B<B837k2L(B}
-NN$B$G$O=E$_$r99?7$9$kKh$K8m:9$,8:$k$h$&$K3X=,$r9T$&$,!"(B
-$B$=$N3X=,$NMM;R$O=i4|$N=E$_$r$I$N$h$&$K@_Dj$7$?$+!"(B
-$B3X=,$KMQ$$$?%Q%i%a!<%?$r$I$N$h$&$K@_Dj$7$?$+!"(B
-$B$H$$$C$?BP>]LdBj0J30$NMWAG$K1F6A$7$F3X=,$NMM;R$,JQ2=$9$k!#(B
-$B%7!<%ICM$rJQ$($?:]$N3X=,<}B+2s?t$rI=(B\ref{table:level1}$B$K<($9!#(B
-$B%7!<%ICM$r(B10$B2sJQ99$7$F3X=,$5$;$?:]$N=E$_$r99?7$9$kMM;R$r?^(B
-\ref{fig:level1-1}$B$K!"(B
-$B$=$NJ?6Q$r%W%m%C%H$7$?J?6Q?d0\CM$r?^(B\ref{fig:level1-2}$B$K<($9!#(B
-$B$J$*!"J?6QCM$r5a$a$k:]$K$O(B10$B<oN`$N%7!<%ICM$K$*$1$k3F2s?tL\$r2C;;$7$F(B10$B$G3d$k$3$H$GJ?6QCM$r;;=P$7$?!#(B
-$B6qBNE*$K$O%7%'%k%9%/%j%W%H$K$F!"(B1000 - 10000$B$^$G$N%7!<%ICM$N3X=,<}B+2s?t$N3F(B1$B2sL\$r<h$j=P$7$?8e$K2C;;$7!"(B10$B$G3d$k!#$=$N7k2L$r(B"total_ave.dat"$B$K(B">>"$B$GF~NO$9$l$P!"0l2sL\$NJ?6Q$,;;=P$5$l$k!#$3$l$r(B100$B2sL\$^$GB3$1$k$3$H$K$h$j!"3F%7!<%ICM$K$*$1$k3X=,<}B+2s?t$NJ?6Q?d0\CM$r;;=P$9$k$3$H$,=PMh$k!#(B
+\subsection{OR問題を学習させた際の誤差収束度合いについて}
+\subsubsection{実験結果}
+NNでは重みを更新する毎に誤差が減るように学習を行うが、
+その学習の様子は初期の重みをどのように設定したか、
+学習に用いたパラメータをどのように設定したか、
+といった対象問題以外の要素に影響して学習の様子が変化する。
+シード値を変えた際の学習収束回数を表\ref{table:level1}に示す。
+シード値を10回変更して学習させた際の重みを更新する様子を図
+\ref{fig:level1-1}に、
+その平均をプロットした平均推移値を図\ref{fig:level1-2}に示す。
+なお、平均値を求める際には10種類のシード値における各回数目を加算して10で割ることで平均値を算出した。
+具体的にはシェルスクリプトにて、1000 - 10000までのシード値の学習収束回数の各1回目を取り出した後に加算し、10で割る。その結果を"total_ave.dat"に">>"で入力すれば、一回目の平均が算出される。これを100回目まで続けることにより、各シード値における学習収束回数の平均推移値を算出することが出来る。
 
 \begin{table}[htb]
  \begin{center}
-  \caption{OR$BLdBj$N3X=,$KMW$7$?2s?t(B}
+  \caption{OR問題の学習に要した回数}
   \label{table:level1}
   \begin{tabular}[htb]{r|l} \hline
-   $B%7!<%ICM(B & $B<}B+$7$?2s?t(B \\ \hline \hline
+   シード値 & 収束した回数 \\ \hline \hline
    1000 &  96\\ \hline
    2000 &  90\\ \hline
    3000 &  111\\ \hline
@@ -27,7 +27,7 @@ NN$B$G$O=E$_$r99?7$9$kKh$K8m:9$,8:$k$h$&$K3X=,$r9T$&$,!"(B
    8000 &  114\\ \hline
    9000 &  113\\ \hline
    10000 & 94 \\ \hline \hline
-   10$B;n9T$NJ?6QCM(B & 102 \\ \hline
+   10試行の平均値 & 102 \\ \hline
   \end{tabular}
  \end{center}
 \end{table}
@@ -36,7 +36,7 @@ NN$B$G$O=E$_$r99?7$9$kKh$K8m:9$,8:$k$h$&$K3X=,$r9T$&$,!"(B
 \begin{figure}[h]
  \begin{center}
   \includegraphics[width=10.0cm]{figs/level1-1.eps}
-  \caption{$B=E$_$r99?7$9$kMM;R(B}
+  \caption{重みを更新する様子}
   \label{fig:level1-1}
  \end{center}
 \end{figure}
@@ -44,13 +44,13 @@ NN$B$G$O=E$_$r99?7$9$kKh$K8m:9$,8:$k$h$&$K3X=,$r9T$&$,!"(B
 \begin{figure}[h]
  \begin{center}
   \includegraphics[width=10.0cm]{figs/level1-2.eps}
-  \caption{$B=E$_$r99?7$9$kMM;R!JJ?6QCM!K(B}
+  \caption{重みを更新する様子（平均値）}
   \label{fig:level1-2}
  \end{center}
 \end{figure}
 
 
-\subsubsection{$B9M;!(B}
-$B3X=,2s?t$,A}2C$9$kDx8m:9$O<}B+$7$F$$$/$,!"=*;O1&8*2<$,$j$H$$$&$o$1$G$O$J$/!"3X=,=xHW$K8m:9$NCM$,>e2<$7$J$,$i<}B+$7$F$$$-$^$9!#3X=,2s?t$,>/$J$$$&$A$O8m:9$NJQ2=$,Bg$-$/!"3X=,2s?t$,B?$/$J$C$F$$$/Dx8m:9$NJQ2=$O>.$5$/$J$C$F$$$/$H9M$($i$l$^$9!#(B
+\subsubsection{考察}
+学習回数が増加する程誤差は収束していくが、終始右肩下がりというわけではなく、学習序盤に誤差の値が上下しながら収束していきます。学習回数が少ないうちは誤差の変化が大きく、学習回数が多くなっていく程誤差の変化は小さくなっていくと考えられます。
 
 
