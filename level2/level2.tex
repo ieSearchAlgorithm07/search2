@@ -1,44 +1,39 @@
-\subsection{階層型NNによる学習}
-\subsubsection{最適なパラメータを探すためのアプローチ}
-指定された条件下において学習が効率良く行われるパラメータの組み合わせを探
-すため、＊＊して＊＊することでパラメータを調整した。
+\subsection{$B3,AX7?(BNN$B$K$h$k3X=,(B}
+\subsubsection{$B:GE,$J%Q%i%a!<%?$rC5$9$?$a$N%"%W%m!<%A(B}
+$B;XDj$5$l$?>r7o2<$K$*$$$F3X=,$,8zN(NI$/9T$o$l$k%Q%i%a!<%?$NAH$_9g$o$;$rC5(B
+$B$9$?$a!":G=i$O#1$D$NCM$E$D!"Bg$^$+$JCM$+$i@_Dj$7$FD4$Y!"=y!9$KCM$N:Y$+$/$7$F$$$/$3$H$G%Q%i%a!<%?$rD4@0$7$?!#(B
 
-（補足：全パターンを調べても良いし、いくつかのパターンを調べても良いが、
-どのような方法で調整したら良いかを考えよう）
+\subsubsection{$B<B9T7k2L(B}
 
-
-\subsubsection{実行結果}
-
-（補足：シード値10パターンで試した際の収束に要した学習回数と、その平均回数が分かるように明示してください。）
 \begin{table}[htb]
  \begin{center}
-  \caption{階層型NNによるExOR問題の学習に要した回数}
+  \caption{$B3,AX7?(BNN$B$K$h$k(BExOR$BLdBj$N3X=,$KMW$7$?2s?t(B}
   \label{table:level2}
   \begin{tabular}[htb]{r|l} \hline
-   シード値 & 収束した回数 \\ \hline \hline
-   100 & hoge \\ \hline
-   200 & hoge \\ \hline
-   300 & hoge \\ \hline
-   400 & hoge \\ \hline
-   500 & hoge \\ \hline
-   600 & hoge \\ \hline
-   700 & hoge \\ \hline
-   800 & hoge \\ \hline
-   900 & hoge \\ \hline
-   1000 & hoge \\ \hline \hline
-   10試行の平均値 & hoge \\ \hline
+   $B%7!<%ICM(B & $B<}B+$7$?2s?t(B \\ \hline \hline
+   1000 &  15622\\ \hline
+   2000 &  110\\ \hline
+   3000 &  100000\\ \hline
+   4000 &  100000\\ \hline
+   5000 &  100000\\ \hline
+   6000 &  17180\\ \hline
+   7000 &  27237\\ \hline
+   8000 &  4394\\ \hline
+   9000 &  6665\\ \hline
+   10000 &  100000\\ \hline \hline
+   10$B;n9T$NJ?6QCM(B &  47130.8\\ \hline
   \end{tabular}
  \end{center}
 \end{table}
 
 \begin{figure}[h]
  \begin{center}
-  \includegraphics[width=10.0cm]{figs/sample2.eps}
-  \caption{重みを更新する様子（平均値）}
+  \includegraphics[width=10.0cm]{figs/exor_ave.pdf}
+  \caption{$B=E$_$r99?7$9$kMM;R!JJ?6QCM!K(B}
   \label{fig:level2}
  \end{center}
 \end{figure}
 
 
-\subsubsection{考察}
-
+\subsubsection{$B9M;!(B}
+alpha$B$d(BETA$B$O9b$$CM$NJ}$,8m:9$,Dc$$7k2L$H$J$C$?$,!"(BHIDDEN$B$K4X$7$F$OI,$:$7$bAq$G$O$J$/!"(B16$B$H$$$&Hf3SE*Dc$$?t;z$G8m:9$,>.$5$/$J$C$?$N$G!"Cf4VAX$N%f%K%C%H$OB?$1$l$PB?$$DxNI$$$H$$$&$o$1$G$O$J$$$H9M$($i$l$k!#(B
