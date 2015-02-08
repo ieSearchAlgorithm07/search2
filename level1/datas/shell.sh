@@ -10,6 +10,8 @@
 ./a.out 9000 > data9.txt
 ./a.out 10000 > data10.txt
 gnuplot<<EOF
+set xlabel "times"
+set ylabel "error"
 plot "data1.txt" with line title "seed=1000"
 replot "data2.txt" with line title "seed=2000"
 replot "data3.txt" with line title "seed=3000"
