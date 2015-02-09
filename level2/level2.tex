@@ -1,39 +1,56 @@
-\subsection{階層型NNによる学習}
-\subsubsection{最適なパラメータを探すためのアプローチ}
-指定された条件下において学習が効率良く行われるパラメータの組み合わせを探
-すため、最初は１つの値づつ、大まかな値から設定して調べ、徐々に値の細かくしていくことでパラメータを調整した。
-
-\subsubsection{実行結果}
+\subsection{$B3,AX7?(BNN$B$K$h$k3X=,(B}
+\subsubsection{$B:GE,$J%Q%i%a!<%?$rC5$9$?$a$N%"%W%m!<%A(B}
+$B;XDj$5$l$?>r7o2<$K$*$$$F3X=,$,8zN(NI$/9T$o$l$k%Q%i%a!<%?$NAH$_9g$o$;$rC5(B
+$B$9$?$a!":G=i$O#1$D$NCM$E$D!"Bg$^$+$JCM$+$i@_Dj$7$FD4$Y!"=y!9$KCM$N:Y$+$/$7$F$$$/$3$H$G%Q%i%a!<%?$rD4@0$7$?!#(B
+$B%Q%i%a!<%?$O0J2<$G$"$k!#(B
+ETA:1.8643 \\
+ALPHA:0.89 \\
+HIDDEN:16 \\
+$BJ?6Q<}B+2s?t(B:
+\subsubsection{$B%Q%i%a!<%?$NLO:wJ}K!(B}
+$B%Q%i%a!<%?!<$O0J2<$N$h$&$K$7$F!"<B:]$KCM$rF~$l$F$_$F!"7k2L$r8+$J$,$i7hDj$7$?!#(B\\
+$B8m:9$N$_$r8+$k$N$G$O$J$/!"%-%A%s$H<}B+$9$k$+$I$&$+$bD4$Y$J$,$iLO:w$7$?!#(B\\
+\begin{itemize}
+\item alpha n :::$B2s?t(B,$B8m:9(B
+ \item alpha 0.1 :::394,0.0000997313
+ \item alpha 0.5 :::17,0.0000998573
+ \item alpha 0.8 :::87,0.0000938422
+ \item alpha 0.89 :::48,0.0000934068
+ \item alpha 0.90 :::44,0.0000820184
+ \item alpha 0.94 :::32,0.0000489520
+\end{itemize}
+$B$3$N$h$&$J7k2L$K$J$C$?$,!"(Balpha=0.89$B0J>e$NCM$O<}B+$9$k2s?t$,A}$($F$$$/$?$a!"(Balpha=0.89$B$,%Y%9%H$@$H9M$($?!#(B\\
+\subsubsection{$B<B9T7k2L(B}
 
 \begin{table}[htb]
  \begin{center}
-  \caption{階層型NNによるExOR問題の学習に要した回数}
+  \caption{$B3,AX7?(BNN$B$K$h$k(BExOR$BLdBj$N3X=,$KMW$7$?2s?t(B}
   \label{table:level2}
   \begin{tabular}[htb]{r|l} \hline
-   シード値 & 収束した回数 \\ \hline \hline
-   1000 &  15622\\ \hline
-   2000 &  110\\ \hline
-   3000 &  100000\\ \hline
-   4000 &  100000\\ \hline
-   5000 &  100000\\ \hline
-   6000 &  17180\\ \hline
-   7000 &  27237\\ \hline
-   8000 &  4394\\ \hline
-   9000 &  6665\\ \hline
-   10000 &  100000\\ \hline \hline
-   10試行の平均値 &  47130.8\\ \hline
+   $B%7!<%ICM(B & $B<}B+$7$?2s?t(B \\ \hline \hline
+   1000 &  48\\ \hline
+   2000 &  68\\ \hline
+   3000 &  243\\ \hline
+   4000 &  64\\ \hline
+   5000 &  67\\ \hline
+   6000 &  69\\ \hline
+   7000 &  54\\ \hline
+   8000 &  38\\ \hline
+   9000 &  55\\ \hline
+   10000 &  52\\ \hline \hline
+   10$B;n9T$NJ?6Q<}B+2s?t(B &  75.8\\ \hline
   \end{tabular}
  \end{center}
 \end{table}
 
 \begin{figure}[h]
  \begin{center}
-  \includegraphics[width=10.0cm]{level2/exor_ave.pdf}
-  \caption{重みを更新する様子（平均値）}
+  \includegraphics[width=10.0cm]{figs/exor_ave.eps}
+  \caption{$B=E$_$r99?7$9$kMM;R!JJ?6QCM!K(B}
   \label{fig:level2}
  \end{center}
 \end{figure}
 
 
-\subsubsection{考察}
-alphaやETAは高い値の方が誤差が低い結果となったが、HIDDENに関しては必ずしも荘ではなく、16という比較的低い数字で誤差が小さくなったので、中間層のユニットは多ければ多い程良いというわけではないと考えられる。
+\subsubsection{$B9M;!(B}
+alpha$B$d(BETA$B$O9b$$CM$NJ}$,8m:9$,Dc$$7k2L$H$J$C$?$,!"(BHIDDEN$B$K4X$7$F$OI,$:$7$b$=$&$G$O$J$/!"(B16$B$H$$$&Hf3SE*Dc$$?t;z$G8m:9$,>.$5$/$J$C$?$N$G!"Cf4VAX$N%f%K%C%H$OB?$1$l$PB?$$DxNI$$$H$$$&$o$1$G$O$J$$$H9M$($i$l$k!#(B
